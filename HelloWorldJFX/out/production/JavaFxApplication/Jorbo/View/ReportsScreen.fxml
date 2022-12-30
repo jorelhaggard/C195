@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-insets: 5; -fx-border-color: grey; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jorbo.Controller.ReportsController">
+   <children>
+      <TabPane layoutX="11.0" layoutY="11.0" prefHeight="351.0" prefWidth="573.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Types by Month">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="289.0" prefWidth="573.0">
+                     <children>
+                        <TableView fx:id="typesTable" layoutX="-1.0" prefHeight="297.0" prefWidth="573.0">
+                          <columns>
+                            <TableColumn fx:id="typesMonthColumn" prefWidth="94.0" text="Month" />
+                            <TableColumn fx:id="typesNewCustyColumn" prefWidth="117.0" text="New Customer" />
+                              <TableColumn fx:id="typesGenRevColumn" prefWidth="121.0" text="General Review" />
+                              <TableColumn fx:id="typesAnnRevColumn" prefWidth="127.0" text="Annual Review" />
+                              <TableColumn fx:id="typesCloseAccountColumb" prefWidth="112.0" text="Close Account" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="schedulesTable" text="Contact Schedules">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="303.0" prefWidth="573.0">
+                     <children>
+                        <TableView layoutX="1.0" layoutY="1.0" prefHeight="256.0" prefWidth="573.0">
+                          <columns>
+                            <TableColumn fx:id="scheduleApptIDColumn" prefWidth="60.0" text="Appt ID" />
+                            <TableColumn fx:id="scheduleTypeColumn" prefWidth="78.0" text="Type" />
+                              <TableColumn fx:id="scheduleDescColumn" prefWidth="75.0" text="Description" />
+                              <TableColumn fx:id="scheduleStartColumn" prefWidth="106.0" text="Start" />
+                              <TableColumn fx:id="scheduleEndColumn" prefWidth="100.0" text="End" />
+                              <TableColumn fx:id="scheduleTitleColumn" prefWidth="78.0" text="Title" />
+                              <TableColumn fx:id="scheduleCustomerIDColumn" prefWidth="75.0" text="Customer ID" />
+                          </columns>
+                        </TableView>
+                        <RadioButton fx:id="anikaRadioButton" layoutX="14.0" layoutY="268.0" mnemonicParsing="false" onAction="#anikaRadioButtonPress" text="Anika's Schedule">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="scheduleTG" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="danielRadioButton" layoutX="231.0" layoutY="268.0" mnemonicParsing="false" onAction="#danielRadioButtonPress" text="Daniel's Schedule" toggleGroup="$scheduleTG" />
+                        <RadioButton fx:id="liRadioButton" layoutX="470.0" layoutY="268.0" mnemonicParsing="false" onAction="#liRadioButtonPress" text="Li's Schedule" toggleGroup="$scheduleTG" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="userTable" text="User Activity">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="573.0">
+                     <children>
+                        <TableView layoutX="1.0" layoutY="1.0" prefHeight="302.0" prefWidth="579.0">
+                          <columns>
+                            <TableColumn fx:id="userUserColumn" prefWidth="110.0" text="User" />
+                            <TableColumn fx:id="userLastUpdateColumn" prefWidth="227.0" text="Last Update" />
+                              <TableColumn fx:id="userTotalCreateColumn" prefWidth="233.0" text="Total # of Existing Records Created" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button fx:id="reportsExitButton" layoutX="21.0" layoutY="362.0" mnemonicParsing="false" onAction="#reportsExitButtonPress" text="Exit Reports" />
+   </children>
+</AnchorPane>

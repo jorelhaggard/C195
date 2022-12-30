@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="292.0" prefWidth="237.0" style="-fx-border-insets: 5; -fx-border-color: grey; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jorbo.Controller.MainController">
+   <children>
+      <Button fx:id="mainExitButton" layoutX="20.0" layoutY="236.0" mnemonicParsing="false" onAction="#mainExitButtonPress" text="Exit" />
+      <Button fx:id="mainCustomerButton" layoutX="82.0" layoutY="86.0" mnemonicParsing="false" onAction="#mainCustomerButtonPress" text="Customers" />
+      <Button fx:id="mainAppointmentsButton" layoutX="73.0" layoutY="146.0" mnemonicParsing="false" onAction="#mainAppointmentsButtonPress" text="Appointments" />
+      <Button fx:id="mainReportsButton" layoutX="90.0" layoutY="203.0" mnemonicParsing="false" onAction="#mainReportsButtonPress" text="Reports" />
+      <Label alignment="CENTER" layoutX="82.0" layoutY="27.0" prefHeight="17.0" prefWidth="74.0" text="Main Screen">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

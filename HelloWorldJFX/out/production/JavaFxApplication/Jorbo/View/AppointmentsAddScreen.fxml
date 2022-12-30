@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="396.0" style="-fx-border-insets: 5; -fx-border-radius: 10; -fx-border-color: grey;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jorbo.Controller.AppointmentsAddController">
+   <children>
+      <Label fx:id="apptOperationLabel" alignment="CENTER" layoutX="90.0" layoutY="27.0" prefHeight="43.0" prefWidth="216.0" text="ADDING APPOINTMENT" textFill="#d72626">
+         <font>
+            <Font name="Trebuchet MS Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <GridPane gridLinesVisible="true" layoutX="46.0" layoutY="70.0" prefHeight="370.0" prefWidth="305.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Date" GridPane.rowIndex="9" />
+            <Label text="End time" GridPane.rowIndex="8" />
+            <Label text="Start time" GridPane.rowIndex="7" />
+            <Label text="Contact" GridPane.rowIndex="6" />
+            <Label text="Location" GridPane.rowIndex="5" />
+            <Label text="Description" GridPane.rowIndex="4" />
+            <Label text="Type" GridPane.rowIndex="3" />
+            <Label text="Title" GridPane.rowIndex="2" />
+            <Label text="Customer " GridPane.rowIndex="1" />
+            <Label text="Appointment ID" />
+            <Label text="User" GridPane.rowIndex="10" />
+            <ComboBox fx:id="apptAddCustomerCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="apptAddTypeCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="apptAddLocationCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="apptAddContactCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="apptAddStartTimeCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <ComboBox fx:id="apptAddEndTimeCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <ComboBox fx:id="apptAddUserCombo" prefWidth="150.0" promptText="Make a selection..." GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <DatePicker fx:id="apptAddDatePicker" promptText="Select a valid date..." GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <TextField fx:id="apptAddIDField" disable="true" promptText="Auto-Incremented" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="apptAddTitleTextField" promptText="Enter a title..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="apptAddDescTextField" promptText="Enter a description..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <Button fx:id="apptAddCancelButton" layoutX="29.0" layoutY="464.0" mnemonicParsing="false" onAction="#apptAddCancelButtonPress" text="Cancel" />
+      <Button fx:id="apptAddSaveButton" layoutX="105.0" layoutY="464.0" mnemonicParsing="false" onAction="#apptAddSaveButtonPress" text="Save" />
+   </children>
+</AnchorPane>
