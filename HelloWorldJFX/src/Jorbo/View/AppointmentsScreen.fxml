@@ -7,21 +7,20 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jorbo.Controller.AppointmentsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="872.0" style="-fx-border-insets: 5; -fx-border-radius: 10; -fx-border-color: grey;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Jorbo.Controller.AppointmentsController">
    <children>
-      <TableView fx:id="appointmentsTable" layoutX="18.0" layoutY="14.0" prefHeight="288.0" prefWidth="754.0">
+      <TableView fx:id="appointmentsTable" layoutX="18.0" layoutY="14.0" prefHeight="288.0" prefWidth="836.0">
         <columns>
           <TableColumn fx:id="apptIDColumn" prefWidth="53.0" text="Appt ID" />
-          <TableColumn fx:id="apptCustIdColumn" prefWidth="55.0" text="Cust. ID" />
-            <TableColumn fx:id="apptTitleColumn" prefWidth="60.0" text="Title" />
-            <TableColumn fx:id="apptTypeColumn" prefWidth="82.0" text="Type" />
-            <TableColumn fx:id="apptDescColumn" prefWidth="83.0" text="Desc." />
-            <TableColumn fx:id="apptLocationColumn" prefWidth="75.0" text="Location" />
-            <TableColumn fx:id="apptContactColumn" prefWidth="94.0" text="Contact" />
-            <TableColumn fx:id="apptStartColumn" prefWidth="100.0" text="Start" />
-            <TableColumn fx:id="apptEndColumn" prefWidth="100.0" text="End" />
-            <TableColumn fx:id="apptUserIdColumn" prefWidth="49.0" text="User ID" />
+          <TableColumn fx:id="apptCustIdColumn" prefWidth="49.0" text="Cust. ID" />
+            <TableColumn fx:id="apptTitleColumn" prefWidth="62.0" text="Title" />
+            <TableColumn fx:id="apptTypeColumn" prefWidth="90.0" text="Type" />
+            <TableColumn fx:id="apptDescColumn" prefWidth="76.0" text="Desc." />
+            <TableColumn fx:id="apptLocationColumn" prefWidth="100.0" text="Location" />
+            <TableColumn fx:id="apptContactColumn" prefWidth="98.0" text="Contact" />
+            <TableColumn fx:id="apptStartColumn" prefWidth="129.0" text="Start" />
+            <TableColumn fx:id="apptEndColumn" prefWidth="134.0" text="End" />
+            <TableColumn fx:id="apptUserColumn" prefWidth="44.0" text="UserID" />
         </columns>
       </TableView>
       <RadioButton fx:id="weeklyRadioButton" layoutX="582.0" layoutY="326.0" mnemonicParsing="false" onAction="#weeklyRadioButtonPress" selected="true" text="Weekly">

@@ -1,5 +1,4 @@
 package Jorbo;
-
 import Jorbo.Util.JDBC;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

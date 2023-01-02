@@ -21,13 +21,13 @@
       </Label>
       <TableView fx:id="customerTableView" layoutX="13.0" layoutY="10.0" prefHeight="168.0" prefWidth="577.0">
         <columns>
-          <TableColumn fx:id="custIDColumn" prefWidth="52.0" text="Cust. ID" />
-          <TableColumn fx:id="custNameColumn" prefWidth="87.0" text="Name" />
-            <TableColumn fx:id="custCountryColumn" prefWidth="86.0" text="Country" />
-            <TableColumn fx:id="custFirstDivColumn" prefWidth="82.0" text="First Division" />
+          <TableColumn fx:id="custIDColumn" prefWidth="20.0" text="ID" />
+          <TableColumn fx:id="custNameColumn" prefWidth="125.0" text="Name" />
+            <TableColumn fx:id="custCountryColumn" prefWidth="72.0" text="Country" />
+            <TableColumn fx:id="custFirstDivColumn" prefWidth="90.0" text="First Division" />
             <TableColumn fx:id="custAddressColumn" prefWidth="110.0" text="Address" />
-            <TableColumn fx:id="custPhoneColumn" prefWidth="90.0" text="Phone " />
-            <TableColumn fx:id="custPostalColumn" prefWidth="75.0" text="Postal" />
+            <TableColumn fx:id="custPhoneColumn" prefWidth="110.0" text="Phone " />
+            <TableColumn fx:id="custPostalColumn" prefWidth="55.0" text="Postal" />
         </columns>
       </TableView>
       <Button fx:id="custExitButton" layoutX="37.0" layoutY="348.0" mnemonicParsing="false" onAction="#custExitButtonPress" text="Exit" />

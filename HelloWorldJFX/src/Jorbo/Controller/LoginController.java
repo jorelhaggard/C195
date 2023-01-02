@@ -28,12 +28,14 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.ResolverStyle;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * This class provides control for the login screen.
+ */
 public class LoginController implements Initializable {
 
     public DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
@@ -47,6 +49,12 @@ public class LoginController implements Initializable {
     public TextField loginUsernameText;
     public PasswordField loginPasswordText;
 
+    /**
+     * this method converts a given username to the corresponding user id.
+     * @param username
+     * @return
+     * @throws SQLException
+     */
     public int nametoID(String username) throws SQLException {
         int id = 0;
         PreparedStatement ps = JDBC.makeConnection().prepareStatement("" +
@@ -59,6 +67,14 @@ public class LoginController implements Initializable {
         return id;
     }
 
+    /**
+     * This method is called when the login button is pressed. It parses the provided username and password,
+     * then calls loginCheck() to check if they are valid. If they are, the main screen is loaded, otherwise an
+     * alert is displayed.
+     * @param actionEvent
+     * @throws IOException
+     * @throws SQLException
+     */
     public void loginLoginButtonPress(ActionEvent actionEvent) throws IOException, SQLException {
         String password = loginPasswordText.getText();
         String username = loginUsernameText.getText();
@@ -85,6 +101,14 @@ public class LoginController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
         }
     }
+
+    /**
+     * This method checks a given username and password for validity using the sql table users.
+     * @param username
+     * @param password
+     * @return
+     * @throws SQLException
+     */
     public boolean loginValidCheck(String username, String password) throws SQLException {
         boolean r = false;
         PreparedStatement ps = JDBC.makeConnection().prepareStatement("" +
@@ -98,6 +122,12 @@ public class LoginController implements Initializable {
         return r;
     }
 
+    /**
+     * This method controls the login logging by creating a new buffered writer and filewriter
+     * and using them to append new login records to the file login_activity.txt.
+     * @param username
+     * @param succ
+     */
     public void loginLog(String username, int succ){
         String attempt = "";
         switch (succ){
@@ -117,6 +147,12 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     * This is the initialize method for the screen. Here, the resource bundle is set to the default of the system. For
+     * french systems, this will populate the login screen and its alerts to all french language.
+     * @param url
+     * @param rb
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         loginRegionLabel.setText(Locale.getDefault().toString());
@@ -132,6 +168,10 @@ public class LoginController implements Initializable {
         }
     }
 
+    /**
+     * This method creates and returns a list of all appointments for the current user.
+     * @return
+     */
     public ObservableList<Appointment> makeApptList(){
         ObservableList<Appointment> appointmentsOL = FXCollections.observableArrayList();
         try {
@@ -151,6 +191,12 @@ public class LoginController implements Initializable {
 
     }
 
+    /**
+     * This method takes an observable list of appointments and filters it to only include appointments starting in the
+     * next 15 minutes of the system's local time. It then returns the filtered list.
+     * @param OL
+     * @return
+     */
     public ObservableList<Appointment> filterAppts(ObservableList<Appointment> OL){
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime nowPlus15 = now.plusMinutes(15);
@@ -165,6 +211,12 @@ public class LoginController implements Initializable {
         return filteredOL;
     }
 
+    /**
+     * This method takes the filtered observable list of appointments. If it's empty,
+     * an alert is displayed saying so. If there is an upcoming appointment, this method
+     * creates a custom alert for it and displays it.
+     * @param OL
+     */
     public void apptAlert(ObservableList<Appointment> OL){
         String error = "";
         String context = "";
@@ -181,5 +233,6 @@ public class LoginController implements Initializable {
         alert.setTitle("Checking for upcoming appointments");
         alert.setHeaderText(error);
         alert.setContentText(context);
+        Optional<ButtonType> result = alert.showAndWait();
     }
 }

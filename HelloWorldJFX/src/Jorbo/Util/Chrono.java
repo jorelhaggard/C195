@@ -4,12 +4,19 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
+/**
+ * This class provides a useful method for the application
+ */
 public class Chrono {
 
-    public static java.sql.Timestamp getTimestamp() {
+    /**
+     * This method returns an sql timestamp signifying now.
+     * @return timestamp
+     */
+    public static Timestamp getTimestamp() {
         ZoneId zoneid = ZoneId.of("UTC");
         LocalDateTime localDateTime = LocalDateTime.now(zoneid);
-        java.sql.Timestamp TS = Timestamp.valueOf(localDateTime);
+        Timestamp TS = Timestamp.valueOf(localDateTime);
         return TS;
     }
 

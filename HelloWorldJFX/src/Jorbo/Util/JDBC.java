@@ -4,6 +4,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * This class is used to connect to the SQL database, and make queries and updates.
+ */
 public class JDBC {
  private static final String protocol = "jdbc";
      private static final String vendor = ":mysql:";
